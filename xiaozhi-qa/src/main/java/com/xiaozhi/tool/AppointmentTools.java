@@ -50,7 +50,7 @@ public class AppointmentTools {
             @P(value = "科室名称") String name,
             @P(value = "日期") String date,
             @P(value = "时间，可选值：上午、下午") String time,
-            @P(value = "医生名称", required = false) String doctorName
+            @P(value = "医生名称") String doctorName
     ) {
         System.out.println("查询是否有号源");
         System.out.println("科室名称：" + name);

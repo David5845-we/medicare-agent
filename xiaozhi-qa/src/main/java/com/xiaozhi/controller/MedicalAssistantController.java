@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 @Tag(name = "Medical Assistant")
 @RestController
@@ -18,7 +19,7 @@ public class MedicalAssistantController {
     private MedicalAssistantAgent medicalAssistantAgent;
     @Operation(summary = "对话")
     @PostMapping("/chat")
-    public String chat(@RequestBody ChatForm chatForm) {
+    public Flux<String> chat(@RequestBody ChatForm chatForm) {
         return medicalAssistantAgent.chat(chatForm.getMemoryId(), chatForm.getMessage());
     }
 }
