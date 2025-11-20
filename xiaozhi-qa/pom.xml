@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>3.2.6</spring-boot.version>
         <knife4j.version>4.3.0</knife4j.version>
-        <langchain4j.version>3.1.0</langchain4j.version>
+        <langchain4j.version>1.0.0-beta3</langchain4j.version>
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
     </properties>
     <dependencies>
@@ -186,7 +186,7 @@
             <dependency>
                 <groupId>dev.langchain4j</groupId>
                 <artifactId>langchain4j-bom</artifactId>
-                <version>1.0.0-beta3</version>
+                <version>${langchain4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -194,7 +194,7 @@
             <dependency>
                 <groupId>dev.langchain4j</groupId>
                 <artifactId>langchain4j-community-bom</artifactId>
-                <version>1.0.0-beta3</version>
+                <version>${langchain4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
