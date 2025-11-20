@@ -79,7 +79,7 @@ public class MedicalCareAgentConfig {
                 .build();
     }
 
-   /* @Bean
+   /*@Bean
     ContentRetriever contentRetrieverMedicalCare() {
 //使用FileSystemDocumentLoader读取指定目录下的知识库文档
 //并使用默认的文档解析器对文档进行解析

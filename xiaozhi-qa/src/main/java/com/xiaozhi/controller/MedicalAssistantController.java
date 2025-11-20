@@ -2,6 +2,7 @@ package com.xiaozhi.controller;
 
 import com.xiaozhi.dto.ChatForm;
 import com.xiaozhi.tool.MedicalAssistantAgent;
+import com.xiaozhi.tool.MedicalAssistantStreamAgent;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,21 @@ import reactor.core.publisher.Flux;
 public class MedicalAssistantController {
     @Autowired
     private MedicalAssistantAgent medicalAssistantAgent;
+
+    @Autowired
+    private MedicalAssistantStreamAgent medicalAssistantStreamAgent;
+
+
     @Operation(summary = "对话")
     @PostMapping("/chat")
-    public Flux<String> chat(@RequestBody ChatForm chatForm) {
+    public String chat(@RequestBody ChatForm chatForm) {
         return medicalAssistantAgent.chat(chatForm.getMemoryId(), chatForm.getMessage());
+    }
+
+
+    @Operation(summary = "对话")
+    @PostMapping("/stream/chat")
+    public Flux<String> chatStream(@RequestBody ChatForm chatForm) {
+        return medicalAssistantStreamAgent.chat(chatForm.getMemoryId(), chatForm.getMessage());
     }
 }
