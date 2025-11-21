@@ -14,7 +14,7 @@ import reactor.core.publisher.Flux;
 
 @Tag(name = "Medical Assistant")
 @RestController
-@RequestMapping("/medical")
+@RequestMapping("/api/medical")
 public class MedicalAssistantController {
     @Autowired
     private MedicalAssistantAgent medicalAssistantAgent;

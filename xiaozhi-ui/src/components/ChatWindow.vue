@@ -2,8 +2,8 @@
   <div class="app-layout">
     <div class="sidebar">
       <div class="logo-section">
-        <img src="@/assets/logo.png" alt="硅谷小智" width="160" height="160" />
-        <span class="logo-text">硅谷小智（医疗版）</span>
+        <img src="@/assets/logo.png" alt="医疗助手" width="160" height="160" />
+        <span class="logo-text">医疗助手</span>
       </div>
       <el-button class="new-chat-button" @click="newChat">
         <i class="fa-solid fa-plus"></i>
@@ -119,7 +119,7 @@ const sendRequest = (message) => {
 
   axios
     .post(
-      '/api/xiaozhi/chat',
+      '/api/medical/chat',
       { memoryId: uuid.value, message },
       {
         responseType: 'stream', // 必须为合法值 "text"

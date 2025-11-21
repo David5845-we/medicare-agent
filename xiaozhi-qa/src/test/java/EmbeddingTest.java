@@ -27,6 +27,14 @@ public class EmbeddingTest {
 
     @Autowired
     private EmbeddingStore embeddingStore;
+
+
+    @Test
+    public void testDimensions() {
+        String testText = "测试文本";
+        Embedding embedding = embeddingModel.embed(testText).content();
+        System.out.println("嵌入模型维度: " + embedding.vector().length);
+    }
     @Test
     public void testEmbeddingModel(){
         Response<Embedding> embed = embeddingModel.embed("你好");
