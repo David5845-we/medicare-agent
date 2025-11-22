@@ -7,6 +7,7 @@ import dev.langchain4j.data.segment.TextSegment;
 
 //import dev.langchain4j.model.embedding.onnx.HuggingFaceTokenizer;
 //import dev.langchain4j.model.embedding.HuggingFaceTokenizer;
+import dev.langchain4j.model.embedding.onnx.HuggingFaceTokenizer;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
 import org.junit.jupiter.api.Test;
@@ -42,7 +43,7 @@ public class RAGTest {
         System.out.println(embeddingStore);
     }
 
-   /* @Test
+   @Test
     public void testDocumentSplitter() {
 //使用FileSystemDocumentLoader读取指定目录下的知识库文档
 //并使用默认的文档解析器对文档进行解析(TextDocumentParser)
@@ -62,7 +63,7 @@ public class RAGTest {
 //DocumentByParagraphSplitter documentSplitter = new
        // DocumentByParagraphSplitter(300, 30);
 
-        *//*LangChain4j：
+        /*LangChain4j：
         6.5、工作方式
         1. 实例化一个 “文档分割器”（DocumentSplitter），指定所需的 “文本片段”（TextSegment）大小，并
         且可以选择指定characters 或token的重叠部分。
@@ -81,16 +82,16 @@ public class RAGTest {
         1. 模型上下文窗口：如果你使用的大语言模型（LLM）有特定的上下文窗口限制，这个值不能超过模
         型能够处理的最大 token 数。例如，某些模型可能最大只能处理 2048 个 token，那么设置的文本片
         段大小就需要远小于这个值，为后续的处理（如添加指令、其他输入等）留出空间。通常，在这种
-        情况下，你可以设置为 1000 - 1500 左右，具体根据实际情况调整。*//*
+        情况下，你可以设置为 1000 - 1500 左右，具体根据实际情况调整。*/
         EmbeddingStoreIngestor
                 .builder()
                 .embeddingStore(embeddingStore)
                 .documentSplitter(documentSplitter)
                 .build()
                 .ingest(document);
-    }*/
+    }
 
-   /* @Test
+   @Test
     public void testTokenCount() {
         String text = "这是一个示例文本，用于测试 token 长度的计算。";
         UserMessage userMessage = UserMessage.userMessage(text);
@@ -100,5 +101,5 @@ public class RAGTest {
         HuggingFaceTokenizer tokenizer = new HuggingFaceTokenizer();
         int count = tokenizer.estimateTokenCountInMessage(userMessage);
         System.out.println("token长度：" + count);
-    }*/
+    }
 }

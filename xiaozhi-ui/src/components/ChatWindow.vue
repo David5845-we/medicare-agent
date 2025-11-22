@@ -119,8 +119,8 @@ const sendRequest = (message) => {
 
   axios
     .post(
-      '/api/medical/chat',
-      { memoryId: uuid.value, message },
+      '/api/medical/stream/chat',
+      { memoryId: Math.floor(Math.random() * 300) + 1, message },
       {
         responseType: 'stream', // 必须为合法值 "text"
         onDownloadProgress: (e) => {
